@@ -5,6 +5,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "tb_produtos")
@@ -23,7 +24,7 @@ public class Produtos {
     private String descricao;
 
     @NotNull
-    private float preco;
+    private BigDecimal preco;
 
     @ManyToOne
     @JsonIgnoreProperties("produtos")
@@ -53,11 +54,11 @@ public class Produtos {
         this.descricao = descricao;
     }
 
-    public float getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(float preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
